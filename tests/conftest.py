@@ -10,6 +10,11 @@ def product_xiaomi():
 
 
 @pytest.fixture
+def product_iphone():
+    return Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
+
+
+@pytest.fixture
 def category_phone():
     product1 = Product(
         "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180_000.0, 5
