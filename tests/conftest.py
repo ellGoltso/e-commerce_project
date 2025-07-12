@@ -31,3 +31,13 @@ def category_tv():
         "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
         [product4],
     )
+
+
+@pytest.fixture
+def dict_product():
+    return {
+        "name": "Samsung Galaxy S23 Ultra",
+        "description": "256GB, Серый цвет, 200MP камера",
+        "price": 180000.0,
+        "quantity": 5,
+    }
