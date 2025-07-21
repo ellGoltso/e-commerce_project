@@ -1,3 +1,5 @@
+import pytest
+
 from src.Product import Product
 
 
@@ -27,5 +29,9 @@ def test_product_str(product_xiaomi):
     assert str(product_xiaomi) == "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.\n"
 
 
-def test_add_products(product_xiaomi, product_iphone):
+def test_add_products(
+    product_xiaomi, product_iphone, smartphone_samsung, grass_fixture
+):
     assert product_xiaomi + product_iphone == 2_114_000
+    with pytest.raises(TypeError):
+        smartphone_samsung + grass_fixture

@@ -1,7 +1,23 @@
 import pytest
 
 from src.Category import Category
+from src.LawnGrass import LawnGrass
 from src.Product import Product
+from src.Smartphone import Smartphone
+
+
+@pytest.fixture
+def smartphone_samsung():
+    return Smartphone(
+        "Samsung Galaxy S23 Ultra",
+        "256GB, Серый цвет, 200MP камера",
+        180000.0,
+        5,
+        95.5,
+        "S23 Ultra",
+        256,
+        "Серый",
+    )
 
 
 @pytest.fixture
@@ -26,6 +42,24 @@ def category_phone():
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
         [product1, product2, product3],
     )
+
+
+@pytest.fixture
+def grass_fixture():
+    return LawnGrass(
+        "Газонная трава",
+        "Элитная трава для газона",
+        500.0,
+        20,
+        "Россия",
+        "7 дней",
+        "Зеленый",
+    )
+
+
+@pytest.fixture
+def product_tv():
+    return Product('65" QLED 4K', "Фоновая подсветка", 150_000.0, 3)
 
 
 @pytest.fixture
