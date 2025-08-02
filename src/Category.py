@@ -21,6 +21,12 @@ class Category:
             count += product.quantity
         return f"{self.name}, количество продуктов: {count} шт."
 
+    def middle_price(self):
+        try:
+            return round(sum(product.price for product in self.__products) / len(self.__products), 2)
+        except ZeroDivisionError:
+            return 0
+
     def add_product(self, product):
         if isinstance(product, Product):
             self.__products.append(product)
