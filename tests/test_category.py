@@ -32,3 +32,12 @@ def test_add_prod(category_tv, product_tv):
     assert category_tv.product_count == 2
     with pytest.raises(TypeError):
         category_tv.add_product(3)
+
+
+def test_middle_price(category_phone):
+    assert category_phone.middle_price() == 140_333.33
+
+
+def test_middle_price_with_empty_category():
+    empty_category = Category("Пустая категория", "Категория без продуктов", [])
+    assert empty_category.middle_price() == 0

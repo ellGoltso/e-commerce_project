@@ -33,3 +33,8 @@ def test_add_products(product_xiaomi, product_iphone, smartphone_samsung, grass_
     assert product_xiaomi + product_iphone == 2_114_000
     with pytest.raises(TypeError):
         smartphone_samsung + grass_fixture
+
+
+def test_incorrect_quantity():
+    with pytest.raises(ValueError):
+        Product("Бракованный товар", "Неверное количество", 1000.0, 0)
